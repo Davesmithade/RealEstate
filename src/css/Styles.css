@@ -1,0 +1,31 @@
+.hero{
+    background-image: url("../assets/poolVilla.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-color: rgb(91, 86, 86);
+    background-blend-mode:overlay;
+}
+
+.active{
+    border-bottom: 2px solid;
+    transition: 0.2s all linear;
+}
+
+.featured{
+    padding-bottom: 1;
+    border-bottom: 2px solid white;
+    font-weight: 400;
+    letter-spacing: .1em;
+    display: inline-block;
+    padding: 10px 10px 10px 0px;
+    color: inherit;
+    width: max-content;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.featured:hover{
+    border-bottom: 2px solid rgb(201, 165, 138);
+}
