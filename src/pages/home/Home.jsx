@@ -26,7 +26,6 @@ const Home = () => {
     },
   });
   //signIn collects & stores data from the SignUp.jsx
-  console.log(regData);
 
   return (
     <div className=" overflow-hidden">
