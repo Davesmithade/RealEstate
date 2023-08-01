@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect } from "react";
 import Logo from "../../assets/logo.png";
 import { BiMenu } from "react-icons/bi";
 import Login from "../../pages/login/Login";
@@ -38,6 +38,18 @@ const Navbar = ({ toggleReg, setToggleReg }) => {
   }
 
   function renderRegistration() {
+    useLayoutEffect(() => {
+      const body = document.querySelector("body");
+      if (toggleReg.login || toggleReg.signUp) {
+        body.style.overflow = "hidden";
+      } else {
+        body.style.overflow = "auto";
+      }
+
+      console.log(body);
+    }, [toggleReg]);
+    //The above makes body not overflow when the form displays
+
     if (toggleReg.login) {
       return <Login handleCloseReg={closeRegistration} />;
     } else if (toggleReg.signUp) {
