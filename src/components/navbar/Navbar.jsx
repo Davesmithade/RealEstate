@@ -1,43 +1,66 @@
-import React from "react";
+import React, {useState} from "react";
 import Logo from "../../assets/logo.png";
 import { BiMenu } from "react-icons/bi";
+import Login from "../../pages/login/Login";
+import SignUp from "../../pages/signUp/SignUp";
 
 const Navbar = () => {
-
   const ToggleNav = () => {
     isSetNav(!setNav);
   };
+
+  const [showLogin, setShowLogin] = useState({
+    login: false, 
+    signUp: false,
+  });
+
+  function handleShowLogin(){
+    console.log('login')
+  }
+
+  function handleShowSignUp(){
+    console.log('signup')
+  }
+
   return (
     <>
       <div>
-        <div className="navbar flex items-center px-[1rem] h-[10vh] lg:px-[4rem] lg:h-[75px] bg-white">
+        <div className="navbar flex items-center px-[1rem] h-[10vh] lg:px-[4rem] lg:h-[75px] bg-[--primary-color]">
           <div className="logo flex items-center flex-1">
             <img src={Logo} alt="" width="70px" />
             <h1 className="text-[24px] font-medium">
-             Real<span className="text-[#ad7135]">Estate</span>
+              Real<span className="text-[--accent-color2]">Estate</span>
             </h1>
           </div>
-          <div className="nav hidden lg:flex lg:items-center lg:gap-8 font-medium text-[14px] text-[#9e6e3d]">
+          <div className="nav hidden lg:flex lg:items-center lg:gap-8 font-medium text-[14px] text-[--secondary-color]">
             <div className="active cursor-pointer">Home</div>
             <div className="cursor-pointer">About</div>
             <div className="cursor-pointer">Buy</div>
             <div className="cursor-pointer">Sell</div>
             <div className="cursor-pointer">Rent</div>
           </div>
-          <div className="buttons hidden lg:flex items-center gap-5 font-medium ml-12 text-white">
-            <div className="py-2 px-7 bg-[#d8c282a7] rounded-[6px] cursor-pointer">
+          <div className="buttons hidden lg:flex items-center gap-5 font-medium ml-12 text-[--primary-color]">
+            <div onClick={handleShowLogin} className="py-2 px-7 bg-[--accent-color1] rounded-[6px] cursor-pointer">
               Log In
             </div>
-            <div className="py-2 px-6 bg-[#9e6e3d] rounded-[6px] cursor-pointer">
+            <div onClick={handleShowSignUp} className="py-2 px-6 bg-[--secondary-color] rounded-[6px] cursor-pointer">
               Sign Up
             </div>
           </div>
 
           <div className="flex lg:hidden">
-          <BiMenu
-                className="text-[#ad7135] text-[45px]"
-                onClick={ToggleNav}
-              />
+            <BiMenu
+              className="text-[#ad7135] text-[45px]"
+              onClick={ToggleNav}
+            />
+          </div>
+
+          <div className=" absolute top-0 left-0 w-full">
+            <Login />
+          </div>
+
+          <div className=" absolute top-0 left-0 w-full">
+            <SignUp />
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const Hero = () => {
         <div className='featured text-[12px] lg:text-[14px]'>PAST TRANSACTIONS</div>
       </div>
 
-      <div className='bg-[#fa9e42de] mt-8 rounded-lg mx-auto'>
+      <div className='bg-[--accent-color3] mt-8 rounded-lg mx-auto'>
         <button className='py-3 p-12'>Send a Message</button>
       </div>
       </div>
