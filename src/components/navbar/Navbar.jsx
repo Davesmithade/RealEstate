@@ -4,7 +4,7 @@ import { BiMenu } from "react-icons/bi";
 import Login from "../../pages/login/Login";
 import SignUp from "../../pages/signUp/SignUp";
 
-const Navbar = ({ toggleReg, setToggleReg }) => {
+const Navbar = ({ toggleReg, setToggleReg, regData, setRegData }) => {
   const ToggleNav = () => {
     isSetNav(!setNav);
   };
@@ -45,15 +45,25 @@ const Navbar = ({ toggleReg, setToggleReg }) => {
       } else {
         body.style.overflow = "auto";
       }
-
-      console.log(body);
     }, [toggleReg]);
     //The above makes body not overflow when the form displays
 
     if (toggleReg.login) {
-      return <Login handleCloseReg={closeRegistration} />;
+      return (
+        <Login
+          handleCloseReg={closeRegistration}
+          regData={regData}
+          setRegData={setRegData}
+        />
+      );
     } else if (toggleReg.signUp) {
-      return <SignUp handleCloseReg={closeRegistration} />;
+      return (
+        <SignUp
+          handleCloseReg={closeRegistration}
+          regData={regData}
+          setRegData={setRegData}
+        />
+      );
     }
   }
 

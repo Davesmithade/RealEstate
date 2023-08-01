@@ -2,6 +2,7 @@ import React from "react";
 import { BsApple, BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { MdClose } from "react-icons/md";
+import { redirect } from "react-router-dom";
 
 const inputStyle = {
   marginTop: "0.4rem",
@@ -21,11 +22,37 @@ const labelStyle = {
   letterSpacing: "0.05rem",
 };
 
-const Login = ({handleCloseReg}) => {
+const Login = ({ handleCloseReg, regData, setRegData }) => {
+  //handleCloseReg is from Navbar.jsx
+  //regData/setRegData is from Home.jsx store input data
+
+  function handleEmail(e) {
+    setRegData({
+      ...regData,
+      login:{
+        ...regData.login,
+        email: e.target.value,
+      }
+    });
+  }
+
+  function handlePassword(e) {
+    setRegData({
+      ...regData,
+      login: {
+        ...regData.login,
+        password: e.target.value,
+      }
+    })
+  }
+
   return (
     <section className=" bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
       <div className=" max-w-[620px] max-h-[900px] overflow-y flex flex-col rounded-lg w-1/3 h-[90%] bg-[--primary-color] pt-7 pb-10 ">
-        <i onClick={handleCloseReg} className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
+        <i
+          onClick={handleCloseReg}
+          className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer"
+        >
           <MdClose />
         </i>
         <h1 className=" text-center text-[1.5rem] font-semibold">
@@ -47,6 +74,8 @@ const Login = ({handleCloseReg}) => {
             id="email"
             style={inputStyle}
             placeholder="Enter email"
+            onChange={handleEmail}
+            value={regData.login.email}
           />
 
           <label
@@ -62,6 +91,8 @@ const Login = ({handleCloseReg}) => {
             id="password"
             style={inputStyle}
             placeholder="Enter password"
+            onChange={handlePassword}
+            value={regData.login.password}
           />
 
           <button

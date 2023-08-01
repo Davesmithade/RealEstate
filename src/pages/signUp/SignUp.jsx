@@ -21,11 +21,97 @@ const labelStyle = {
   letterSpacing: "0.05rem",
 };
 
-const SignUp = ({handleCloseReg}) => {
+const SignUp = ({ handleCloseReg, regData, setRegData }) => {
+  //handleCloseReg is from Navbar.jsx
+  //regData/setRegData is from Home.jsx store input data
+
+  function handleEmail(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        email: e.target.value,
+      },
+    });
+  }
+
+  function handlePassword(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        password: e.target.value,
+      },
+    });
+  }
+
+  function handleCheckbox(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        checked: e.target.checked,
+      },
+    });
+  }
+
+  function handleSelect(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        select: e.target.value,
+      },
+    });
+  }
+
+  function handleFirstName(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        firstName: e.target.value,
+      },
+    });
+  }
+
+  function handleLastName(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        lastName: e.target.value,
+      },
+    });
+  }
+
+  function handleZipCode(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        zipCode: e.target.value,
+      },
+    });
+  }
+
+  function handlePhoneNo(e) {
+    setRegData({
+      ...regData,
+      signUp: {
+        ...regData.signUp,
+        phoneNo: e.target.value,
+      },
+    });
+  }
+
   return (
     <section className=" bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
       <div className=" max-w-[620px] max-h-[900px] overflow-y flex flex-col md:rounded-lg lg:rounded-lg w-full md:w-3/6 lg:w-1/3 h-full md:h-[95%] lg:h-[90%] bg-[--primary-color] pt-7 pb-10 ">
-        <i onClick={handleCloseReg} className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
+        <i
+          onClick={handleCloseReg}
+          className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer"
+        >
           <MdClose />
         </i>
         <h1 className=" text-center text-[1.5rem] font-semibold">
@@ -47,6 +133,8 @@ const SignUp = ({handleCloseReg}) => {
             id="register-email"
             style={inputStyle}
             placeholder="Enter email"
+            onChange={handleEmail}
+            value={regData.signUp.email}
           />
 
           <label
@@ -62,6 +150,8 @@ const SignUp = ({handleCloseReg}) => {
             id="register-password"
             style={inputStyle}
             placeholder="Create password"
+            onChange={handlePassword}
+            value={regData.signUp.password}
           />
 
           <p className=" flex flex-col ml-4 mt-1 text-[.8rem] text-[#666]">
@@ -76,6 +166,8 @@ const SignUp = ({handleCloseReg}) => {
               type="checkbox"
               id="checkbox"
               className="signup-checkbox-input"
+              onChange={handleCheckbox}
+              value={regData.signUp.checked}
             />
             <label htmlFor="checkbox" className=" signup-checkbox-label">
               <i>
@@ -93,35 +185,37 @@ const SignUp = ({handleCloseReg}) => {
             </label>
 
             <select
+              onChange={handleSelect}
+              value={regData.signUp.select}
               name="professional type"
               id="professional"
               className=" relative cursor-pointer text-[1rem] border border-[--registration-bg-color] outline-none bg-[--input-bg] text-[#666] py-2 px-2 font-normal"
             >
-              <option value="option1" className=" py-2 text-[#000]">
+              <option value="" className=" py-2 text-[#000]">
                 Select your category
               </option>
-              <option value="option2" className=" py-2 text-[#000]">
+              <option value="Realestate Agent or Broker" className=" py-2 text-[#000]">
                 Realestate Agent or Broker
               </option>
-              <option value="option3" className=" py-2 text-[#000]">
+              <option value="Mortgage Lender" className=" py-2 text-[#000]">
                 Mortgage Lender
               </option>
-              <option value="option4" className=" py-2 text-[#000]">
+              <option value="Home Imporvement Services" className=" py-2 text-[#000]">
                 Home Imporvement Services
               </option>
-              <option value="option5" className=" py-2 text-[#000]">
+              <option value="Landlord" className=" py-2 text-[#000]">
                 Landlord
               </option>
-              <option value="option6" className=" py-2 text-[#000]">
+              <option value="Photographer" className=" py-2 text-[#000]">
                 Photographer
               </option>
-              <option value="option7" className=" py-2 text-[#000]">
+              <option value="Home Builder" className=" py-2 text-[#000]">
                 Home Builder
               </option>
-              <option value="option8" className=" py-2 text-[#000]">
+              <option value="Home Inspector" className=" py-2 text-[#000]">
                 Home Inspector
               </option>
-              <option value="option9" className=" py-2 text-[#000]">
+              <option value="Property Manager" className=" py-2 text-[#000]">
                 Property Manager
               </option>
             </select>
@@ -137,6 +231,8 @@ const SignUp = ({handleCloseReg}) => {
                   className=" w-full"
                   placeholder="First name"
                   style={inputStyle}
+                  onChange={handleFirstName}
+                  value={regData.signUp.firstName}
                 />
               </div>
 
@@ -150,6 +246,8 @@ const SignUp = ({handleCloseReg}) => {
                   className=" w-full font-normal"
                   placeholder="Last name"
                   style={inputStyle}
+                  onChange={handleLastName}
+                  value={regData.signUp.lastName}
                 />
               </div>
             </div>
@@ -158,14 +256,20 @@ const SignUp = ({handleCloseReg}) => {
               Zip/Postal
             </label>
             <input
-              type="text"
+              type="number"
               id="zip/postal"
               className=" w-full"
               placeholder="Zip/Postal"
               style={inputStyle}
+              onChange={handleZipCode}
+              value={regData.signUp.zipCode}
             />
 
-            <label htmlFor="phone-number" style={labelStyle} className="no-spinner mt-5">
+            <label
+              htmlFor="phone-number"
+              style={labelStyle}
+              className="no-spinner mt-5"
+            >
               Phone number
             </label>
             <input
@@ -173,6 +277,8 @@ const SignUp = ({handleCloseReg}) => {
               id="phone-number"
               style={inputStyle}
               placeholder="Enter your number"
+              onChange={handlePhoneNo}
+              value={regData.signUp.phoneNo}
             />
           </div>
 
