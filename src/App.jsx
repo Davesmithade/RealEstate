@@ -8,6 +8,8 @@ import Sell from './pages/sell/Sell';
 import Rent from './pages/rent/Rent';
 import './App.css'
 
+
+
 const App = () => {
   return (
     <div>

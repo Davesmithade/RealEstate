@@ -11,7 +11,7 @@ const inputStyle = {
   outline: "none",
   border: "1px solid var(--registration-bg-color)",
   height: "2.9rem",
-  fontSize: "1.1rem",
+  fontSize: "1.05rem",
   paddingLeft: "1rem",
 };
 
@@ -21,20 +21,14 @@ const labelStyle = {
   letterSpacing: "0.05rem",
 };
 
-const profInfoLabelStyle ={
-  fontWeight: '500',
-  fontSize: '0.9rem',
-  marginBottom: '0.5rem',
-}
-
-const SignUp = () => {
+const SignUp = ({handleCloseReg}) => {
   return (
-    <section className="max-w bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
-      <div className="overflow-y flex flex-col md:rounded-lg lg:rounded-lg w-full md:w-3/6 lg:w-1/3 h-full md:h-[95%] lg:h-[90%] bg-[--primary-color] pt-7 pb-10 ">
-        <i className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
+    <section className=" bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
+      <div className=" max-w-[620px] max-h-[900px] overflow-y flex flex-col md:rounded-lg lg:rounded-lg w-full md:w-3/6 lg:w-1/3 h-full md:h-[95%] lg:h-[90%] bg-[--primary-color] pt-7 pb-10 ">
+        <i onClick={handleCloseReg} className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
           <MdClose />
         </i>
-        <h1 className=" text-center lg:text-[1.5rem] lg:font-semibold">
+        <h1 className=" text-center text-[1.5rem] font-semibold">
           Welcome To RealEstate
         </h1>
 
@@ -45,19 +39,19 @@ const SignUp = () => {
           action=""
           className=" border-y border-[--registration-bg-color] pt-4 pb-4 mx-7 px-3 flex flex-col"
         >
-          <label htmlFor="email" id="email" style={labelStyle}>
+          <label htmlFor="email" id="register-email" style={labelStyle}>
             Email
           </label>
           <input
             type="email"
-            id="email"
+            id="register-email"
             style={inputStyle}
             placeholder="Enter email"
           />
 
           <label
             htmlFor="password"
-            id="password"
+            id="register-password"
             style={labelStyle}
             className=" mt-5"
           >
@@ -65,7 +59,7 @@ const SignUp = () => {
           </label>
           <input
             type="password"
-            id="password"
+            id="register-password"
             style={inputStyle}
             placeholder="Create password"
           />
@@ -91,26 +85,95 @@ const SignUp = () => {
             <p>I am a landlord or industry professional</p>
           </div>
 
-          <div className="professional-info hidden flex-col">
+          <div className="professional-info flex-col">
             <h1>Professional Information</h1>
 
-            <label htmlFor="select" style={profInfoLabelStyle} className=" mt-5">Professional type</label>
+            <label htmlFor="select" style={labelStyle} className=" mt-5">
+              Professional type
+            </label>
 
-            <select name="professional type" id="professional" className=" relative cursor-pointer text-[1rem] border border-[--registration-bg-color] outline-none bg-[--input-bg] text-[#666] py-2 px-2 font-normal">
-              <option value="option1" className=" py-2 text-[#000]">Select your category</option>
-              <option value="option2" className=" py-2 text-[#000]">Realestate Agent or Broker</option>
-              <option value="option3" className=" py-2 text-[#000]">Mortgage Lender</option>
-              <option value="option4" className=" py-2 text-[#000]">Home Imporvement Services</option>
-              <option value="option5" className=" py-2 text-[#000]">Landlord</option>
-              <option value="option6" className=" py-2 text-[#000]">Photographer</option>
-              <option value="option7" className=" py-2 text-[#000]">Home Builder</option>
-              <option value="option8" className=" py-2 text-[#000]">Home Inspector</option>
-              <option value="option9" className=" py-2 text-[#000]">Property Manager</option>
+            <select
+              name="professional type"
+              id="professional"
+              className=" relative cursor-pointer text-[1rem] border border-[--registration-bg-color] outline-none bg-[--input-bg] text-[#666] py-2 px-2 font-normal"
+            >
+              <option value="option1" className=" py-2 text-[#000]">
+                Select your category
+              </option>
+              <option value="option2" className=" py-2 text-[#000]">
+                Realestate Agent or Broker
+              </option>
+              <option value="option3" className=" py-2 text-[#000]">
+                Mortgage Lender
+              </option>
+              <option value="option4" className=" py-2 text-[#000]">
+                Home Imporvement Services
+              </option>
+              <option value="option5" className=" py-2 text-[#000]">
+                Landlord
+              </option>
+              <option value="option6" className=" py-2 text-[#000]">
+                Photographer
+              </option>
+              <option value="option7" className=" py-2 text-[#000]">
+                Home Builder
+              </option>
+              <option value="option8" className=" py-2 text-[#000]">
+                Home Inspector
+              </option>
+              <option value="option9" className=" py-2 text-[#000]">
+                Property Manager
+              </option>
             </select>
-          </div>
 
-          <div className=" flex ">
-            
+            <div className=" flex gap-4 mt-6">
+              <div className="flex flex-col">
+                <label htmlFor="fname" style={labelStyle}>
+                  First name
+                </label>
+                <input
+                  type="text"
+                  id="fname"
+                  className=" w-full"
+                  placeholder="First name"
+                  style={inputStyle}
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label htmlFor="lname" style={labelStyle}>
+                  Last name
+                </label>
+                <input
+                  type="text"
+                  id="lname"
+                  className=" w-full font-normal"
+                  placeholder="Last name"
+                  style={inputStyle}
+                />
+              </div>
+            </div>
+
+            <label htmlFor="zip/postal" style={labelStyle} className=" mt-5">
+              Zip/Postal
+            </label>
+            <input
+              type="text"
+              id="zip/postal"
+              className=" w-full"
+              placeholder="Zip/Postal"
+              style={inputStyle}
+            />
+
+            <label htmlFor="phone-number" style={labelStyle} className="no-spinner mt-5">
+              Phone number
+            </label>
+            <input
+              type="number"
+              id="phone-number"
+              style={inputStyle}
+              placeholder="Enter your number"
+            />
           </div>
 
           <button
@@ -122,7 +185,7 @@ const SignUp = () => {
 
           <small className=" mt-4 text-center text-[#666]">
             By submitting, I accept RealEstate's
-            <span className=" underline text-[--secondary-color] cursor-pointer hover:no-underline">
+            <span className="ml-1 underline text-[--secondary-color] cursor-pointer hover:no-underline">
               terms of use.
             </span>
           </small>

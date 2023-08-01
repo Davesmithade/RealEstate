@@ -21,14 +21,14 @@ const labelStyle = {
   letterSpacing: "0.05rem",
 };
 
-const Login = () => {
+const Login = ({handleCloseReg}) => {
   return (
-    <section className="max-w bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
-      <div className="overflow-y flex flex-col rounded-lg w-1/3 h-[90%] bg-[--primary-color] pt-7 pb-10 ">
-        <i className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
+    <section className=" bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
+      <div className=" max-w-[620px] max-h-[900px] overflow-y flex flex-col rounded-lg w-1/3 h-[90%] bg-[--primary-color] pt-7 pb-10 ">
+        <i onClick={handleCloseReg} className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
           <MdClose />
         </i>
-        <h1 className=" text-center lg:text-[1.5rem] lg:font-semibold">
+        <h1 className=" text-center text-[1.5rem] font-semibold">
           Welcome To RealEstate
         </h1>
 

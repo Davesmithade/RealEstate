@@ -68,6 +68,10 @@ section.max-w {
   display: none;
 }
 
+.professional-info{
+  display: none;
+}
+
 .tick.tick:has(input:checked) + .professional-info{
   display: flex;
   font-weight: 500;
@@ -75,6 +79,7 @@ section.max-w {
 
   margin-top: 1.5rem;
 }
+
 
 /*Above is for SignUp.jsx checkbox field*/
 

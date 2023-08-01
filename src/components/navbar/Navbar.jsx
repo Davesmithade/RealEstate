@@ -1,25 +1,59 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/logo.png";
 import { BiMenu } from "react-icons/bi";
 import Login from "../../pages/login/Login";
 import SignUp from "../../pages/signUp/SignUp";
 
-const Navbar = () => {
+const Navbar = ({ toggleReg, setToggleReg }) => {
   const ToggleNav = () => {
     isSetNav(!setNav);
   };
 
-  const [showLogin, setShowLogin] = useState({
-    login: false, 
-    signUp: false,
-  });
+  function handleShowLogin() {
+    if (toggleReg.signUp) {
+      setToggleReg({
+        ...toggleReg,
+        signUp: !toggleReg.signUp,
+      });
+    }
 
-  function handleShowLogin(){
-    console.log('login')
+    setToggleReg({
+      ...toggleReg,
+      login: !toggleReg.login,
+    });
+
+    console.log(toggleReg.login);
   }
 
-  function handleShowSignUp(){
-    console.log('signup')
+  function closeRegistration() {
+    setToggleReg({
+      login: false,
+      signUp: false,
+    });
+  }
+
+  function handleShowSignUp() {
+    if (toggleReg.login) {
+      setToggleReg({
+        ...toggleReg,
+        login: !toggleReg.login,
+      });
+    }
+
+    setToggleReg({
+      ...toggleReg,
+      signUp: !toggleReg.signUp,
+    });
+
+    console.log(toggleReg.signUp);
+  }
+
+  function renderRegistration() {
+    if (toggleReg.login) {
+      return <Login handleCloseReg={closeRegistration} />;
+    } else if (toggleReg.signUp) {
+      return <SignUp handleCloseReg={closeRegistration} />;
+    }
   }
 
   return (
@@ -40,10 +74,16 @@ const Navbar = () => {
             <div className="cursor-pointer">Rent</div>
           </div>
           <div className="buttons hidden lg:flex items-center gap-5 font-medium ml-12 text-[--primary-color]">
-            <div onClick={handleShowLogin} className="py-2 px-7 bg-[--accent-color1] rounded-[6px] cursor-pointer">
+            <div
+              onClick={handleShowLogin}
+              className="py-2 px-7 bg-[--accent-color1] rounded-[6px] cursor-pointer"
+            >
               Log In
             </div>
-            <div onClick={handleShowSignUp} className="py-2 px-6 bg-[--secondary-color] rounded-[6px] cursor-pointer">
+            <div
+              onClick={handleShowSignUp}
+              className="py-2 px-6 bg-[--secondary-color] rounded-[6px] cursor-pointer"
+            >
               Sign Up
             </div>
           </div>
@@ -55,12 +95,8 @@ const Navbar = () => {
             />
           </div>
 
-          <div className=" absolute top-0 left-0 w-full">
-            <Login />
-          </div>
-
-          <div className=" absolute top-0 left-0 w-full">
-            <SignUp />
+          <div className=" absolute top-0 left-0 w-full z-[1000]">
+            {renderRegistration()}
           </div>
         </div>
       </div>
