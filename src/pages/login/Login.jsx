@@ -24,8 +24,8 @@ const labelStyle = {
 const Login = () => {
   return (
     <section className="max-w bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
-      <div className="flex flex-col rounded-lg overflow-y-scroll w-1/3 h-[90%] bg-[--primary-color] pt-7 pb-10 ">
-        <i className=" text-[1.5rem] place-self-end sticky top-0 right-0 cursor-pointer">
+      <div className="overflow-y flex flex-col rounded-lg w-1/3 h-[90%] bg-[--primary-color] pt-7 pb-10 ">
+        <i className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
           <MdClose />
         </i>
         <h1 className=" text-center lg:text-[1.5rem] lg:font-semibold">
@@ -79,25 +79,25 @@ const Login = () => {
         <h2 className=" text-center text-[1.05rem] mt-4">Or connect with:</h2>
 
         <div className=" mx-7 flex flex-col">
-          <button className="rounded-[.25rem] flex items-center px-4 py-[.65rem] text-[.95rem] mt-4 border border-[#000] bg-[#000] text-[--primary-color] hover:bg-transparent hover:text-[#000]">
+          <button className="rounded-[.25rem] flex items-center justify-center gap-3 px-4 py-[.65rem] text-[.95rem] mt-4 border border-[#000] bg-[#000] text-[--primary-color] hover:bg-transparent hover:text-[#000]">
             <i className=" text-[1.1rem]">
               <BsApple />
             </i>
-            <p className="w-full text-center">Continue with Apple</p>
+            <p>Continue with Apple</p>
           </button>
 
-          <button className="rounded-[.25rem] flex items-center px-4 py-[.55rem] text-[.95rem] mt-4 border border-[#1877F2] bg-[#1877F2] text-[--primary-color] hover:bg-transparent hover:text-[#4366B1] ">
+          <button className="rounded-[.25rem] flex items-center justify-center gap-3 px-4 py-[.55rem] text-[.95rem] mt-4 border border-[#1877F2] bg-[#1877F2] text-[--primary-color] hover:bg-transparent hover:text-[#4366B1] ">
             <i className=" text-[1.2rem]">
               <BsFacebook />
             </i>
-            <p className="w-full text-center">Continue with Facebook</p>
+            <p>Continue with Facebook</p>
           </button>
 
-          <button className="rounded-[.25rem] flex items-center px-4 py-[.55rem] text-[.95rem] mt-4 border border-[--registration-bg-color] text-[#000] hover:bg-[--input-bg] hover:border-[#4366B1] transition-all duration-200 ease">
+          <button className="rounded-[.25rem] flex items-center justify-center gap-3 px-4 py-[.55rem] text-[.95rem] mt-4 border border-[--registration-bg-color] text-[#000] hover:bg-[--input-bg] hover:border-[#4366B1] transition-all duration-200 ease">
             <i className=" text-[1.2rem]">
               <FcGoogle />
             </i>
-            <p className="w-full text-center">Continue with Google</p>
+            <p>Continue with Google</p>
           </button>
         </div>
       </div>
