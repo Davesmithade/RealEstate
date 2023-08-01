@@ -24,7 +24,7 @@ const labelStyle = {
 const SignUp = () => {
   return (
     <section className="max-w bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
-      <div className="overflow-y flex flex-col lg:rounded-lg w-full md:w-3/6 lg:w-1/3 h-full md:h-[95%] lg:h-[90%] bg-[--primary-color] pt-7 pb-10 ">
+      <div className="overflow-y flex flex-col md:rounded-lg lg:rounded-lg w-full md:w-3/6 lg:w-1/3 h-full md:h-[95%] lg:h-[90%] bg-[--primary-color] pt-7 pb-10 ">
         <i className=" text-[1.5rem] place-self-end sticky top-0 right-3 cursor-pointer">
           <MdClose />
         </i>
@@ -61,19 +61,32 @@ const SignUp = () => {
             type="password"
             id="password"
             style={inputStyle}
-            placeholder="Enter password"
+            placeholder="Create password"
           />
+
+          <p className=" flex flex-col ml-4 mt-1 text-[.8rem] text-[#666]">
+            <span>At least 8 characters </span>
+            <span>Mix of letters and numbers </span>
+            <span>At least 1 special character </span>
+            <span>At least 1 lowercase letter and 1 uppercase letter </span>
+          </p>
+
+          <div className=" mt-5 flex gap-2">
+            <label htmlFor="checkbox" className=" signup-checkbox-label">
+
+            </label>
+            <input type="checkbox" id="checkbox" className=" signup-checkbox-input" />
+            <p>I am a landlord or industry professional</p>
+          </div>
 
           <button
             type="submit"
             className="mt-8 text-[1.1rem] font-medium text-[--primary-color] bg-[--accent-color2] py-2 rounded-[.25rem] transition-all hover:bg-[--secondary-color]"
           >
-            Sign Up
+            Submit
           </button>
 
-          <h1 className=" text-center mt-3 font-medium text-[1.1rem] text-[--secondary-color] cursor-pointer hover:underline">
-            Forgot your password?
-          </h1>
+          <small className=" mt-4 text-center text-[#666]">By submitting, I accept RealEstate's <span className=" underline text-[--secondary-color] cursor-pointer hover:no-underline">terms of use.</span></small>
         </form>
 
         <h2 className=" text-center text-[1.05rem] mt-4">Or connect with:</h2>
