@@ -38,33 +38,47 @@ section.max-w {
   display: none;
 }
 
-.signup-checkbox-label{
-  border: 1px solid red;
-  position: relative;
+/*Below is for SignUp.jsx Checkbox Field*/
+.tick .signup-checkbox-label{
+  display: flex;
+  place-items: center;
+  border: 0.1rem solid #666;
+  border-radius: 3px;
+  transition: .2s ease;
   cursor: pointer;
 
-  padding: 0px 10px;
-
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
-.signup-checkbox-label::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
-
-  width: 100%;
-  height: 100%;
+.signup-checkbox-label i{
+  scale: 0;
+  color: var(--primary-color);
 }
 
-.signup-checkbox-input{
+.tick:has(input:checked)  i{
+  scale: 1;
+}
+
+.tick:has(input:checked) .signup-checkbox-label{
+  background-color: var(--secondary-color);
+}
+
+.tick input{
   display: none;
 }
 
-.signup-checkbox-input:checked + .signup-checkbox-label{
-  background: green;
+.tick.tick:has(input:checked) + .professional-info{
+  display: flex;
+  font-weight: 500;
+  font-size: 1.2rem;
+
+  margin-top: 1.5rem;
 }
+
+/*Above is for SignUp.jsx checkbox field*/
+
+
 
 @media screen and (width <= 1200px) {
   body::-webkit-scrollbar{

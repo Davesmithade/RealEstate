@@ -1,5 +1,5 @@
 import React from "react";
-import { BsApple, BsFacebook } from "react-icons/bs";
+import { BsApple, BsFacebook, BsCheckLg } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { MdClose } from "react-icons/md";
 
@@ -20,6 +20,12 @@ const labelStyle = {
   fontWeight: "500",
   letterSpacing: "0.05rem",
 };
+
+const profInfoLabelStyle ={
+  fontWeight: '500',
+  fontSize: '0.9rem',
+  marginBottom: '0.5rem',
+}
 
 const SignUp = () => {
   return (
@@ -71,12 +77,40 @@ const SignUp = () => {
             <span>At least 1 lowercase letter and 1 uppercase letter </span>
           </p>
 
-          <div className=" mt-5 flex gap-2">
+          <div className="tick mt-5 flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="checkbox"
+              className="signup-checkbox-input"
+            />
             <label htmlFor="checkbox" className=" signup-checkbox-label">
-
+              <i>
+                <BsCheckLg />
+              </i>
             </label>
-            <input type="checkbox" id="checkbox" className=" signup-checkbox-input" />
             <p>I am a landlord or industry professional</p>
+          </div>
+
+          <div className="professional-info hidden flex-col">
+            <h1>Professional Information</h1>
+
+            <label htmlFor="select" style={profInfoLabelStyle} className=" mt-5">Professional type</label>
+
+            <select name="professional type" id="professional" className=" relative cursor-pointer text-[1rem] border border-[--registration-bg-color] outline-none bg-[--input-bg] text-[#666] py-2 px-2 font-normal">
+              <option value="option1" className=" py-2 text-[#000]">Select your category</option>
+              <option value="option2" className=" py-2 text-[#000]">Realestate Agent or Broker</option>
+              <option value="option3" className=" py-2 text-[#000]">Mortgage Lender</option>
+              <option value="option4" className=" py-2 text-[#000]">Home Imporvement Services</option>
+              <option value="option5" className=" py-2 text-[#000]">Landlord</option>
+              <option value="option6" className=" py-2 text-[#000]">Photographer</option>
+              <option value="option7" className=" py-2 text-[#000]">Home Builder</option>
+              <option value="option8" className=" py-2 text-[#000]">Home Inspector</option>
+              <option value="option9" className=" py-2 text-[#000]">Property Manager</option>
+            </select>
+          </div>
+
+          <div className=" flex ">
+            
           </div>
 
           <button
@@ -86,31 +120,36 @@ const SignUp = () => {
             Submit
           </button>
 
-          <small className=" mt-4 text-center text-[#666]">By submitting, I accept RealEstate's <span className=" underline text-[--secondary-color] cursor-pointer hover:no-underline">terms of use.</span></small>
+          <small className=" mt-4 text-center text-[#666]">
+            By submitting, I accept RealEstate's
+            <span className=" underline text-[--secondary-color] cursor-pointer hover:no-underline">
+              terms of use.
+            </span>
+          </small>
         </form>
 
         <h2 className=" text-center text-[1.05rem] mt-4">Or connect with:</h2>
 
         <div className=" mx-7 flex flex-col">
-          <button className="rounded-[.25rem] flex items-center px-4 py-[.65rem] text-[.95rem] mt-4 border border-[#000] bg-[#000] text-[--primary-color] hover:bg-transparent hover:text-[#000]">
+          <button className="rounded-[.25rem] flex items-center justify-center gap-3 px-4 py-[.65rem] text-[.95rem] mt-4 border border-[#000] bg-[#000] text-[--primary-color] hover:bg-transparent hover:text-[#000]">
             <i className=" text-[1.1rem]">
               <BsApple />
             </i>
-            <p className="w-full text-center">Continue with Apple</p>
+            <p>Continue with Apple</p>
           </button>
 
-          <button className="rounded-[.25rem] flex items-center px-4 py-[.55rem] text-[.95rem] mt-4 border border-[#1877F2] bg-[#1877F2] text-[--primary-color] hover:bg-transparent hover:text-[#4366B1] ">
+          <button className="rounded-[.25rem] flex items-center justify-center gap-3 px-4 py-[.55rem] text-[.95rem] mt-4 border border-[#1877F2] bg-[#1877F2] text-[--primary-color] hover:bg-transparent hover:text-[#4366B1] ">
             <i className=" text-[1.2rem]">
               <BsFacebook />
             </i>
-            <p className="w-full text-center">Continue with Facebook</p>
+            <p>Continue with Facebook</p>
           </button>
 
-          <button className="rounded-[.25rem] flex items-center px-4 py-[.55rem] text-[.95rem] mt-4 border border-[--registration-bg-color] text-[#000] hover:bg-[--input-bg] hover:border-[#4366B1] transition-all duration-200 ease">
+          <button className="rounded-[.25rem] flex items-center justify-center gap-3 px-4 py-[.55rem] text-[.95rem] mt-4 border  border-[--registration-bg-color] text-[#000] hover:bg-[--input-bg] hover:border-[#4366B1] transition-all duration-200 ease">
             <i className=" text-[1.2rem]">
               <FcGoogle />
             </i>
-            <p className="w-full text-center">Continue with Google</p>
+            <p>Continue with Google</p>
           </button>
         </div>
       </div>
