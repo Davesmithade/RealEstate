@@ -21,15 +21,6 @@ const Navbar = ({ toggleReg, setToggleReg }) => {
       ...toggleReg,
       login: !toggleReg.login,
     });
-
-    console.log(toggleReg.login);
-  }
-
-  function closeRegistration() {
-    setToggleReg({
-      login: false,
-      signUp: false,
-    });
   }
 
   function handleShowSignUp() {
@@ -44,8 +35,6 @@ const Navbar = ({ toggleReg, setToggleReg }) => {
       ...toggleReg,
       signUp: !toggleReg.signUp,
     });
-
-    console.log(toggleReg.signUp);
   }
 
   function renderRegistration() {
@@ -54,6 +43,13 @@ const Navbar = ({ toggleReg, setToggleReg }) => {
     } else if (toggleReg.signUp) {
       return <SignUp handleCloseReg={closeRegistration} />;
     }
+  }
+
+  function closeRegistration() {
+    setToggleReg({
+      login: false,
+      signUp: false,
+    });
   }
 
   return (
