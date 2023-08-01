@@ -131,6 +131,7 @@ const SignUp = ({ handleCloseReg, regData, setRegData }) => {
           <input
             type="email"
             id="register-email"
+            required
             style={inputStyle}
             placeholder="Enter email"
             onChange={handleEmail}
@@ -148,6 +149,7 @@ const SignUp = ({ handleCloseReg, regData, setRegData }) => {
           <input
             type="password"
             id="register-password"
+            required
             style={inputStyle}
             placeholder="Create password"
             onChange={handlePassword}

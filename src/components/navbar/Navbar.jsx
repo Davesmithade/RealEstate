@@ -72,6 +72,23 @@ const Navbar = ({ toggleReg, setToggleReg, regData, setRegData }) => {
       login: false,
       signUp: false,
     });
+
+    setRegData({
+      login: {
+        email: "",
+        password: "",
+      },
+      signUp: {
+        email: "",
+        password: "",
+        checked: false,
+        select: "",
+        firstName: "",
+        lastName: "",
+        zipCode: "",
+        phoneNo: "",
+      },
+    });
   }
 
   return (

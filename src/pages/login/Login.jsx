@@ -72,6 +72,7 @@ const Login = ({ handleCloseReg, regData, setRegData }) => {
           <input
             type="email"
             id="email"
+            required
             style={inputStyle}
             placeholder="Enter email"
             onChange={handleEmail}
@@ -89,6 +90,7 @@ const Login = ({ handleCloseReg, regData, setRegData }) => {
           <input
             type="password"
             id="password"
+            required
             style={inputStyle}
             placeholder="Enter password"
             onChange={handlePassword}
