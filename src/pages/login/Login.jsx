@@ -47,7 +47,7 @@ const Login = ({ handleCloseReg, regData, setRegData }) => {
   }
 
   return (
-    <section className=" bg-[--registration-bg-color] h-screen flex items-center justify-center border-2 border-blue-700">
+    <section className=" bg-[--registration-bg-color] h-screen flex items-center justify-center">
       <div className=" max-w-[620px] max-h-[900px] overflow-y flex flex-col rounded-lg w-1/3 h-[90%] bg-[--primary-color] pt-7 pb-10 ">
         <i
           onClick={handleCloseReg}
