@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="cursor-pointer">Rent</div>
           </div>
           <div className="buttons hidden lg:flex items-center gap-5 font-medium ml-12 text-white">
-            <div className="py-2 px-7 bg-[#d8c282a7] rounded-[6px] cursor-pointer">
+            <div className="py-2 px-7 bg-[#fa9e427f] rounded-[6px] cursor-pointer">
               Log In
             </div>
             <div className="py-2 px-6 bg-[#9e6e3d] rounded-[6px] cursor-pointer">

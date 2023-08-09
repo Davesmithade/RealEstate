@@ -4,8 +4,9 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: 1;
-    background-color: rgb(91, 86, 86);
-    background-blend-mode:overlay;
+    transition: all ease-out .7s;
+    background-color: rgb(65, 60, 60);
+    background-blend-mode: overlay;
 }
 
 .active{
@@ -15,7 +16,8 @@
 
 .featured{
     padding-bottom: 1;
-    border-bottom: 2px solid white;
+    position: relative;
+    border-bottom: 2px solid #fff;
     font-weight: 400;
     letter-spacing: .1em;
     display: inline-block;
@@ -26,6 +28,19 @@
     cursor: pointer;
 }
 
-.featured:hover{
-    border-bottom: 2px solid rgb(201, 165, 138);
+.featured::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    /* color: transparent; */
+    width: 0%;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .23s;
+    height: 2px;
+    bottom: -2px;
+    background: #c9a58a;
 }
+
+ .featured:hover::before{
+    width: 100%;
+    /* color: #fff; */
+} 

@@ -7,8 +7,6 @@ import imgs6 from "../assets/studioapart.jpg"
 import imgs7 from "../assets/studioapart.jpg"
 import imgs8 from "../assets/studioapart.jpg"
 
-
-
 export const location = [
     {
         images:imgs,
