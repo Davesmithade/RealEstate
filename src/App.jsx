@@ -6,6 +6,9 @@ import SignUp from "./pages/signUp/SignUp"
 import Home from "./pages/home/Home"
 import Sell from './pages/sell/Sell';
 import Rent from './pages/rent/Rent';
+import './App.css'
+
+
 
 const App = () => {
   return (

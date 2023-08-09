@@ -1,0 +1,92 @@
+:root {
+  /*Below is Font All Colours*/
+  --primary-color: #fff;
+  --secondary-color: #9e6e3d;
+  --accent-color1: #d8c282a7;
+  --accent-color2: #ad7135;
+  --accent-color3: #fa9e42de;
+  --registration-bg-color: rgb(0, 0, 0, 0.5);
+  --input-bg: #f5f5f5;
+
+  /*Below is Font Sizes*/
+  --txt-lg: 40px;
+  --txt-lg-s: 14px;
+  --txt-sm-l: 28px;
+  --txt-sm-s: 12px;
+
+  /*Below is Margin & Padding*/
+  --lg-px: ;
+  --sm-px: ;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section.max-w {
+  max-width: 1280px;
+}
+
+.overflow-y{
+  overflow-y: scroll;
+}
+.overflow-x{
+  overflow-x: scroll;
+}
+
+.overflow-y::-webkit-scrollbar, .overflow-x::-webkit-scrollbar{
+  display: none;
+}
+
+/*Below is for SignUp.jsx Checkbox Field*/
+.tick .signup-checkbox-label{
+  display: flex;
+  place-items: center;
+  border: 0.1rem solid #666;
+  border-radius: 3px;
+  transition: .2s ease;
+  cursor: pointer;
+
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.signup-checkbox-label i{
+  scale: 0;
+  color: var(--primary-color);
+}
+
+.tick:has(input:checked)  i{
+  scale: 1;
+}
+
+.tick:has(input:checked) .signup-checkbox-label{
+  background-color: var(--secondary-color);
+}
+
+.tick input{
+  display: none;
+}
+
+.professional-info{
+  display: none;
+}
+
+.tick.tick:has(input:checked) + .professional-info{
+  display: flex;
+  font-weight: 500;
+  font-size: 1.2rem;
+
+  margin-top: 1.5rem;
+}
+
+
+/*Above is for SignUp.jsx checkbox field*/
+
+
+
+@media screen and (width <= 1200px) {
+  body::-webkit-scrollbar{
+    display: none;
+  }
+}
